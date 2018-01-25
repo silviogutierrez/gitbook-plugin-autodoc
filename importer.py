@@ -12,7 +12,7 @@ def super_meow(path):
     symbol = getattr(importlib.import_module('.'.join(path.split('.')[:-1])), path.split('.')[-1])
 
     if isinstance(symbol, list):
-        print(pprint.pformat(symbol, compact=True)[1:-1])
+        print(' ' + pprint.pformat(symbol, compact=True)[1:-1])
     else:
         try:
             print(inspect.getsource(symbol))

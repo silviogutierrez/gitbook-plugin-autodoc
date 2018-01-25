@@ -13,7 +13,7 @@ module.exports = {
 
                 while (blah = regex.exec(page.content)) {
                     var path = blah[1];
-                    var code = child_process.execSync('../../bin/python server/importer.py ' + path).toString();
+                    var code = child_process.execSync('../../bin/python scripts/importer.py ' + path).toString();
                     page.content = page.content.replace(blah[0], "```python\n" + code + "```")
                 }
 
